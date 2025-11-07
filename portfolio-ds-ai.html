@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santiago Bayaslian - Portafolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            background: #667eea;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Santiago Bayaslian</h1>
+        <p>Data Scientist & AI Engineer</p>
+    </header>
+
+    <nav>
+        <a href="#sobre-mi">Sobre Mí</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <section id="sobre-mi">
+            <h2>Sobre Mí</h2>
+            <div class="about-content">
+                <div class="profile-img">👨‍💻</div>
+                <div>
+                    <p>Soy un profesional apasionado por la ciencia de datos y la inteligencia artificial, con experiencia en el desarrollo de soluciones innovadoras utilizando machine learning, deep learning y análisis de datos.</p>
+                    <p style="margin-top: 1rem;">Mi objetivo es transformar datos en insights accionables y crear modelos de IA que resuelvan problemas reales.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills">
+                <div class="skill-card">
+                    <h3>📊 Análisis de Datos</h3>
+                    <p>Python, Pandas, NumPy, SQL, Estadística</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🤖 Machine Learning</h3>
+                    <p>Scikit-learn, XGBoost, Random Forest, SVM</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🧠 Deep Learning</h3>
+                    <p>TensorFlow, PyTorch, Keras, Redes Neuronales</p>
+                </div>
+                <div class="skill-card">
+                    <h3>📈 Visualización</h3>
+                    <p>Matplotlib, Seaborn, Plotly, Power BI</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🔧 Herramientas</h3>
+                    <p>Git, Docker, Jupyter, Google Colab</p>
+                </div>
+                <div class="skill-card">
+                    <h3>☁️ Cloud & MLOps</h3>
+                    <p>AWS, Azure, MLflow, FastAPI</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos Destacados</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>📊 Editor de CSV con Streamlit</h3>
+                    <p>Aplicación web completa para editar archivos CSV, crear tablas desde cero y generar datos aleatorios de prueba. Incluye editor interactivo, múltiples tipos de datos (nombres, emails, fechas) y descarga de resultados.</p>
+                    <div class="project-tags">
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Data Manipulation</span>
+                    </div>
+                    <a href="https://csv-editor.streamlit.app/" target="_blank" class="project-link">🔗 Ver App en Vivo</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>💡 Consulta NL → SQL Dinámico</h3>
+                    <p>Aplicación web interactiva que convierte consultas en lenguaje natural español a SQL automáticamente usando embeddings multilingües y Machine Learning. Incluye diccionario expandible y score de confianza.</p>
+                    <div class="project-tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">Transformers</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                    <a href="https://nl2sql-ia.streamlit.app/" target="_blank" class="project-link">🔗 Ver App en Vivo</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>🛡️ Detección de Grooming con IA</h3>
+                    <p>Sistema de IA para detectar posibles casos de grooming en conversaciones mediante clasificación de texto con NLP. Incluye chat interactivo en Streamlit con análisis de riesgo en tiempo real, análisis de archivos completos y recursos de ayuda.</p>
+                    <div class="project-tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Text Classification</span>
+                        <span class="tag">Safety</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>🏠 Predicción de Precios de Viviendas en California</h3>
+                    <p>Análisis exploratorio y modelo de regresión lineal para predecir precios de viviendas basado en variables socioeconómicas y geográficas. Incluye ingeniería de features, mapas de calor de correlaciones y métricas de evaluación (R²=0.63, MAE=$7,500).</p>
+                    <div class="project-tags">
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Regression</span>
+                        <span class="tag">EDA</span>
+                        <span class="tag">Matplotlib</span>
+                        <span class="tag">Jupyter Notebook</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>📘 Manual Interactivo de Ciencia de Datos</h3>
+                    <p>Aplicación educativa interactiva con Streamlit que cubre Python, Pandas, SQL, visualización de datos y Machine Learning. Incluye ejemplos de código ejecutables, visualizaciones en vivo y navegación por temas (variables, DataFrames, regresión, clasificación).</p>
+                    <div class="project-tags">
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Educational</span>
+                        <span class="tag">Matplotlib</span>
+                    </div>
+                    <a href="https://cienciadedatos-ia.streamlit.app/" target="_blank" class="project-link">🔗 Ver App en Vivo</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>📊 Análisis Predictivo de Clientes y Promociones</h3>
+                    <p>Aplicación web con Streamlit para predecir probabilidad de recompra usando árboles de decisión. Incluye análisis exploratorio, visualizaciones interactivas, matriz de confusión y recomendaciones estratégicas basadas en comportamiento demográfico y promocional.</p>
+                    <div class="project-tags">
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Decision Trees</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">EDA</span>
+                        <span class="tag">Business Analytics</span>
+                    </div>
+                    <a href="https://recompra-informe.streamlit.app/" target="_blank" class="project-link">🔗 Ver App en Vivo</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>📈 Dashboard Estratégico de Ventas - Estancia San Francisco</h3>
+                    <p>Sistema de análisis estratégico con Matriz BCG, mapas de calor temporales (semanal/horario), análisis de canasta de compras y series temporales. Clasificación de productos (Estrellas, Vacas Lecheras, Interrogantes, Perros) con impacto real en decisiones operativas y comerciales.</p>
+                    <div class="project-tags">
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Seaborn</span>
+                        <span class="tag">BCG Matrix</span>
+                        <span class="tag">Time Series</span>
+                        <span class="tag">Business Intelligence</span>
+                    </div>
+                    <a href="https://dashboard-esfav.streamlit.app/" target="_blank" class="project-link">🔗 Ver App en Vivo</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <a href="mailto:bayasliansantiago@gmail.com" class="contact-item">
+                    <span>📧</span>
+                    <span>bayasliansantiago@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/santiago-bayaslian-183487306/" target="_blank" class="contact-item">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/BayaslianSantiago" target="_blank" class="contact-item">
+                    <span>💻</span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Santiago Bayaslian. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
