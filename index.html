@@ -86,19 +86,6 @@
             gap: 2rem;
         }
 
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            flex-shrink: 0;
-        }
-
         .skills {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -236,6 +223,7 @@
     <nav>
         <a href="#sobre-mi">Sobre Mí</a>
         <a href="#habilidades">Habilidades</a>
+        <a href="#certificaciones">Certificaciones</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#contacto">Contacto</a>
     </nav>
@@ -244,10 +232,9 @@
         <section id="sobre-mi">
             <h2>Sobre Mí</h2>
             <div class="about-content">
-                <div class="profile-img">👨‍💻</div>
                 <div>
-                    <p>Soy un profesional apasionado por la ciencia de datos y la inteligencia artificial, con experiencia en el desarrollo de soluciones innovadoras utilizando machine learning, deep learning y análisis de datos.</p>
-                    <p style="margin-top: 1rem;">Mi objetivo es transformar datos en insights accionables y crear modelos de IA que resuelvan problemas reales.</p>
+                    <p>Científico de datos e ingeniero de IA especializado en el desarrollo de soluciones inteligentes que combinan procesamiento de lenguaje natural, análisis predictivo y visualización estratégica de datos. Mi experiencia abarca desde la creación de aplicaciones web interactivas hasta sistemas de machine learning con impacto real en negocios.</p>
+                    <p style="margin-top: 1rem;">He desarrollado proyectos que van desde herramientas de análisis estratégico con Matriz BCG y mapas de calor, hasta sistemas de detección de contenido sensible mediante NLP, y aplicaciones que transforman lenguaje natural en consultas SQL. Mi enfoque se centra en crear soluciones que no solo sean técnicamente robustas, sino también accesibles y orientadas al usuario final.</p>
                 </div>
             </div>
         </section>
@@ -256,28 +243,50 @@
             <h2>Habilidades Técnicas</h2>
             <div class="skills">
                 <div class="skill-card">
-                    <h3>📊 Análisis de Datos</h3>
-                    <p>Python, Pandas, NumPy, SQL, Estadística</p>
+                    <h3>🐍 Lenguajes de Programación</h3>
+                    <p>Python, SQL, HTML/CSS</p>
+                </div>
+                <div class="skill-card">
+                    <h3>📊 Análisis y Manipulación de Datos</h3>
+                    <p>Pandas, NumPy, Data Cleaning, Feature Engineering</p>
                 </div>
                 <div class="skill-card">
                     <h3>🤖 Machine Learning</h3>
-                    <p>Scikit-learn, XGBoost, Random Forest, SVM</p>
+                    <p>Scikit-learn, Regresión, Clasificación, Árboles de Decisión</p>
                 </div>
                 <div class="skill-card">
-                    <h3>🧠 Deep Learning</h3>
-                    <p>TensorFlow, PyTorch, Keras, Redes Neuronales</p>
+                    <h3>🧠 NLP & Deep Learning</h3>
+                    <p>Transformers, PyTorch, Embeddings, Text Classification</p>
                 </div>
                 <div class="skill-card">
-                    <h3>📈 Visualización</h3>
-                    <p>Matplotlib, Seaborn, Plotly, Power BI</p>
+                    <h3>📈 Visualización de Datos</h3>
+                    <p>Matplotlib, Seaborn, Plotly, Mapas de Calor</p>
                 </div>
                 <div class="skill-card">
-                    <h3>🔧 Herramientas</h3>
-                    <p>Git, Docker, Jupyter, Google Colab</p>
+                    <h3>🌐 Desarrollo de Aplicaciones</h3>
+                    <p>Streamlit, APIs, Dashboards Interactivos</p>
                 </div>
                 <div class="skill-card">
-                    <h3>☁️ Cloud & MLOps</h3>
-                    <p>AWS, Azure, MLflow, FastAPI</p>
+                    <h3>📉 Business Intelligence</h3>
+                    <p>Matriz BCG, Series Temporales, Análisis de Canasta, KPIs</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🔧 Herramientas & Entornos</h3>
+                    <p>Jupyter Notebook, Git, Google Colab, Looker Studio</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificaciones">
+            <h2>Certificaciones</h2>
+            <div style="margin-top: 1rem;">
+                <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
+                    <h3 style="color: #667eea; margin-bottom: 0.5rem;">📊 Introducción a Looker Studio</h3>
+                    <p style="color: #666;">Google Cloud Skills Boost (2025)</p>
+                </div>
+                <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #764ba2;">
+                    <h3 style="color: #764ba2; margin-bottom: 0.5rem;">☁️ Data Engineering on AWS Learning Plan</h3>
+                    <p style="color: #666;">AWS Skill Builder (en progreso)</p>
                 </div>
             </div>
         </section>
